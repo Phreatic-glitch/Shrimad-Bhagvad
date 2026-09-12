@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIVINE WISDOM — Timeless Wisdom of Shri Krishna & Bhagavad Gita</title>
+  <meta name="description" content="A digital sanctuary to explore the timeless life philosophy, motivation, and spiritual teachings of the Bhagavad Gita and Lord Krishna.">
+
+  <!-- Google Fonts for Sacred Typography & Devanagari Sanskrit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/divine-wisdom.css">
+  <link rel="stylesheet" href="css/divine-animations.css">
+
+  <!-- Favicon / Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪷</text></svg>">
+</head>
+<body data-theme="midnight">
+
+  <!-- Three.js Cosmic Celestial Background Canvas -->
+  <canvas id="celestial-canvas"></canvas>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- Site Content Wrapper -->
+  <div class="site-wrapper">
+
+    <!-- ==================== Header & Navigation ==================== -->
+    <header id="divine-header">
+      <div class="container nav-container">
+        <a href="#hero" class="brand-logo" aria-label="Divine Wisdom Home">
+          <div class="brand-symbol">ॐ</div>
+          <div class="brand-text">
+            <span class="brand-name">DIVINE WISDOM</span>
+            <span class="brand-tagline">Wisdom of Shri Krishna</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav>
+          <ul class="nav-links" id="nav-menu">
+            <li><a href="#about-gita" class="nav-link">About Gita</a></li>
+            <li><a href="#radha-krishna" class="nav-link">Radha Krishna</a></li>
+            <li><a href="#quotes-discovery" class="nav-link">Verses & Wisdom</a></li>
+            <li><a href="#daily-wisdom" class="nav-link">Today's Wisdom</a></li>
+            <li><a href="#life-philosophy" class="nav-link">Philosophy</a></li>
+            <li><a href="#contemplation" class="nav-link">Seek Guidance</a></li>
+          </ul>
+        </nav>
+
+        <!-- Navbar Controls: Ambient Music & Theme -->
+        <div class="nav-controls">
+          <div class="audio-ctrl-wrap" style="display: flex; align-items: center; gap: 8px;">
+            <button id="audio-toggle-btn" class="audio-ctrl-btn" aria-pressed="false" title="Toggle Peaceful Ambient Soundscape (Press 'M')">
+              <div class="audio-wave" id="audio-wave-anim">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="audio-label">Ambient Music</span>
+            </button>
+            <input type="range" id="audio-volume-slider" class="aura-slider" min="0" max="1" step="0.05" value="0.4" style="width: 70px;" title="Volume Slider" aria-label="Ambient volume">
+          </div>
+
+          <button id="theme-toggle-btn" class="theme-btn" title="Toggle Twilight / Midnight Theme">
+            <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <span class="theme-label">Midnight</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg class="icon-medium" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== 1. Hero Section ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-visual"></div>
+      <div class="container hero-content">
+        <div class="hero-subtitle-badge">
+          <span>🪷</span>
+          <span>The Timeless Wisdom of Shri Krishna</span>
+          <span>🪷</span>
+        </div>
+
+        <h1 class="hero-heading">
+          When the mind is restless,<br>let wisdom become your guide.
+        </h1>
+
+        <p class="hero-supporting-text">
+          "Discover the timeless teachings of Shri Krishna and awaken the strength within."
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#quotes-discovery" class="btn btn-gold">
+            <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>Explore Krishna's Wisdom</span>
+          </a>
+          <a href="#about-gita" class="btn btn-outline-gold">
+            <span>Discover Bhagavad Gita</span>
+            <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Featured Anchor Verse -->
+        <div class="hero-verse-banner">
+          <span class="morpankh-badge">🪶</span>
+          <p>
+            <strong>Bhagavad Gita 2.47:</strong> "You have a right to perform your prescribed duty, but never to the fruits of action. Let not outcomes define your peace."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. About The Bhagavad Gita ==================== -->
+    <section class="about-gita-section" id="about-gita">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text-col">
+            <div class="section-tag">
+              <span class="om-symbol">ॐ</span>
+              <span>The Eternal Song of the Divine</span>
+            </div>
+            <h3>A Timeless Guide to the Battlefield of Human Life</h3>
+            <p>
+              Spoken over five thousand years ago on the battlefield of Kurukshetra, the <strong>Bhagavad Gita</strong> ("The Song of God") is not merely an ancient scripture, but a psychological and spiritual masterclass for overcoming inner conflict, anxiety, grief, and moral paralysis.
+            </p>
+            <p>
+              When the warrior prince Arjuna collapses in despair, unable to bear the burden of his duty, Lord Krishna does not command blind obedience. Instead, Krishna leads him through a rigorous inquiry into the nature of consciousness, action, duty, and eternal truth.
+            </p>
+
+            <div class="about-stats-grid">
+              <div class="stat-card">
+                <span class="stat-num">18</span>
+                <span class="stat-label">Sacred Chapters</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">700</span>
+                <span class="stat-label">Timeless Shlokas</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Yogas (Karma, Jnana, Bhakti)</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">5000+</span>
+                <span class="stat-label">Years of Living Wisdom</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual-col">
+            <div class="about-visual-card">
+              <img src="assets/images/vrindavan_celestial_hero.jpg" alt="Ancient Sacred Vrindavan and Temple Ghats" loading="lazy">
+              <div class="visual-card-overlay">
+                <h4>Kurukshetra to Vrindavan</h4>
+                <p>From the outer storms of duty to the inner sanctuary of peace, Krishna's wisdom reconciles action with tranquility.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. Radha & Krishna Visual Experience ==================== -->
+    <section class="radha-krishna-section" id="radha-krishna">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="om-symbol">🪷</span>
+            <span>Divine Aesthetic Sanctuary</span>
+          </div>
+          <h2>Radha & Krishna Visual Experience</h2>
+          <p>Immerse yourself in the enchanting divine presence of Shri Krishna and Radha in sacred Vrindavan. Interact with the celestial lighting, explore sacred symbols, and feel the serenity of divine grace.</p>
+        </div>
+
+        <div class="rk-sanctuary-container" id="radha-krishna-experience" data-active-lighting="golden-hour">
+          <!-- Interactive Controls Bar -->
+          <div class="rk-controls-bar">
+            <div class="lighting-selector-group">
+              <span class="control-label">Atmosphere:</span>
+              <button class="lighting-pill-btn" data-lighting="brahmamuhurta">Brahmamuhurta (Dawn)</button>
+              <button class="lighting-pill-btn active" data-lighting="golden-hour">Twilight (Golden Hour)</button>
+              <button class="lighting-pill-btn" data-lighting="cosmic-midnight">Cosmic Midnight</button>
+            </div>
+
+            <div class="aura-slider-group">
+              <span class="control-label">Aura Glow:</span>
+              <input type="range" id="aura-intensity-range" class="aura-slider" min="20" max="100" value="80" aria-label="Aura Glow Intensity">
+              <span class="intensity-val-badge" id="aura-intensity-val">80%</span>
+            </div>
+          </div>
+
+          <!-- 3D Parallax Stage -->
+          <div class="rk-stage">
+            <!-- Flute sparks particle canvas -->
+            <canvas id="flute-sparks-canvas"></canvas>
+
+            <!-- Background Atmosphere Layer -->
+            <div class="rk-layer rk-layer-bg"></div>
+
+            <!-- Dynamic Aura Glow Ring -->
+            <div class="rk-aura-ring"></div>
+
+            <!-- Character Visual Layer -->
+            <div class="rk-layer rk-layer-char">
+              <img src="assets/images/radha_krishna_divine.jpg" alt="Divine Sri Radha and Krishna in Vrindavan with Flute and Peacock Feather" class="rk-main-image">
+            </div>
+
+            <!-- Sacred Symbolism Hotspots -->
+            <div class="rk-hotspot spot-morpankh" data-symbol="morpankh" title="Peacock Feather Crown (Morpankh)">
+              <span>🪶</span>
+              <span class="hotspot-tooltip">Morpankh (Peacock Crown)</span>
+            </div>
+
+            <div class="rk-hotspot spot-bansuri" data-symbol="bansuri" title="Divine Flute (Bansuri)">
+              <span>🎶</span>
+              <span class="hotspot-tooltip">Bansuri (Divine Flute)</span>
+            </div>
+
+            <div class="rk-hotspot spot-syama" data-symbol="syama" title="Cosmic Blue Hue (Syama)">
+              <span>✨</span>
+              <span class="hotspot-tooltip">Syama (Cosmic Hue)</span>
+            </div>
+
+            <div class="rk-hotspot spot-pitambara" data-symbol="pitambara" title="Yellow Silk (Pitambara)">
+              <span>☀️</span>
+              <span class="hotspot-tooltip">Pitambara (Golden Dhoti)</span>
+            </div>
+
+            <div class="rk-hotspot spot-radha" data-symbol="radha" title="Radha's Grace (Hladini Shakti)">
+              <span>💖</span>
+              <span class="hotspot-tooltip">Radha's Grace</span>
+            </div>
+
+            <div class="rk-hotspot spot-kamala" data-symbol="kamala" title="Sacred Lotus (Kamala)">
+              <span>🪷</span>
+              <span class="hotspot-tooltip">Kamala (Sacred Lotus)</span>
+            </div>
+          </div>
+
+          <!-- Stage Info Description -->
+          <div class="rk-stage-footer">
+            <div id="rk-lighting-description">
+              <strong>Vrindavan Twilight (Golden Hour)</strong> — <span>The enchanted hour of sunset as cows return home, glowing in warm saffron, celestial amber, and soft river mist.</span>
+            </div>
+            <div class="rk-tip">
+              <em>💡 Move cursor or touch to explore 3D depth. Click glowing icons to reveal sacred symbolism.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4 & 5. Bhagavad Gita Quotes & Category Engine ==================== -->
+    <section class="quotes-discovery-section" id="quotes-discovery">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="om-symbol">📖</span>
+            <span>Scripture Discovery</span>
+          </div>
+          <h2>Bhagavad Gita Verses & Teachings</h2>
+          <p>Explore authentic verses from the Bhagavad Gita with accurate Sanskrit Devanagari, transliteration, English translation, and modern life lessons.</p>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="quotes-filter-toolbar">
+          <div class="search-bar-row">
+            <div class="search-input-wrapper">
+              <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="text" id="quotes-search-input" class="search-input" placeholder="Search by verse, Sanskrit, keyword (e.g., duty, fear, 2.47, peace)..." aria-label="Search Gita Verses">
+            </div>
+
+            <button id="random-quote-btn" class="btn btn-outline-gold" title="Reveal Random Verse (Press 'R')">
+              <span>Random Verse</span>
+              <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 3 21 3 21 8"/>
+                <line x1="4" y1="20" x2="21" y2="3"/>
+                <polyline points="21 16 21 21 16 21"/>
+                <line x1="15" y1="15" x2="21" y2="21"/>
+                <line x1="4" y1="4" x2="9" y2="9"/>
+              </svg>
+            </button>
+
+            <button id="view-favorites-btn" class="btn btn-secondary" title="View Saved Favorite Verses">
+              <span>Saved</span>
+              <span class="fav-count-badge">0</span>
+            </button>
+          </div>
+
+          <!-- Category Pill Filter Tabs -->
+          <div class="category-pills-wrap" id="quotes-categories" role="tablist">
+            <!-- Injected dynamically via quotes-engine.js -->
+          </div>
+
+          <div id="quotes-count-display" class="quotes-count-text text-muted" style="text-align: right; font-size: 0.85rem;">
+            Loading verses...
+          </div>
+        </div>
+
+        <!-- Quotes Grid -->
+        <div class="quotes-grid-container" id="quotes-grid">
+          <!-- Injected dynamically via quotes-engine.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. Today's Divine Wisdom ==================== -->
+    <section class="daily-wisdom-section" id="daily-wisdom">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="om-symbol">☀️</span>
+            <span>Daily Contemplation Companion</span>
+          </div>
+          <h2>Today's Divine Wisdom</h2>
+          <p>A sacred daily teaching to center your spirit, reflect on duty, and cultivate peace before entering the world.</p>
+        </div>
+
+        <div class="dw-card-container">
+          <div class="dw-card" id="daily-wisdom-card">
+            <div class="dw-card-header">
+              <span class="dw-badge" id="dw-theme">Clarity in Action</span>
+              <div class="dw-navigation-btns">
+                <button class="dw-nav-btn" id="dw-prev-btn" title="Previous Wisdom">← Prev</button>
+                <span class="quote-ref-badge" id="dw-ref">BG 2.47</span>
+                <button class="dw-nav-btn" id="dw-next-btn" title="Next Wisdom">Next →</button>
+              </div>
+            </div>
+
+            <!-- Sanskrit Snippet -->
+            <p class="dw-sanskrit-quote" id="dw-sanskrit">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन</p>
+
+            <!-- Translation -->
+            <blockquote class="dw-translation" id="dw-translation">
+              "Your right is to your duty alone, never to its fruits."
+            </blockquote>
+
+            <!-- Reveal Wisdom Interaction Button -->
+            <div style="text-align: center; margin: 24px 0 10px;">
+              <button id="dw-reveal-btn" class="btn btn-outline-gold">
+                <span>🪷 Reveal Today's Deeper Wisdom</span>
+              </button>
+            </div>
+
+            <!-- Expandable Deeper Content -->
+            <div id="dw-hidden-content">
+              <!-- Life Lesson -->
+              <div class="dw-lesson-box">
+                <h4>Daily Life Lesson</h4>
+                <p id="dw-lesson">Action done with sincerity brings purity of mind; anxiety over the result brings mental fatigue. Pour yourself into the process today.</p>
+              </div>
+
+              <!-- Reflective Question of the Day -->
+              <div class="dw-question-box">
+                <span class="dw-question-label">Contemplate Today:</span>
+                <p class="dw-question-text" id="dw-question">What task is in front of me today that deserves my sincere effort, regardless of what happens tomorrow?</p>
+              </div>
+            </div>
+
+            <!-- Personal Reflection Journal -->
+            <div class="dw-journal-area">
+              <div class="dw-journal-header">
+                <div>
+                  <h5>My Sacred Daily Reflection</h5>
+                  <span id="dw-prompt" class="text-gold" style="font-size: 0.82rem; font-style: italic;">Today, I will focus entirely on giving my best to...</span>
+                </div>
+                <span class="text-muted" style="font-size: 0.78rem;">Saved privately on your device</span>
+              </div>
+
+              <div class="journal-input-wrap">
+                <textarea id="dw-journal-input" class="journal-textarea" placeholder="Today, I will focus entirely on giving my best to..."></textarea>
+              </div>
+
+              <div style="display: flex; justify-content: flex-end;">
+                <button id="dw-journal-save-btn" class="btn btn-gold">
+                  <span>Save Daily Reflection</span>
+                  <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                    <polyline points="17 21 17 13 7 13 7 21"/>
+                    <polyline points="7 3 7 8 15 8"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Journal History -->
+              <div class="dw-journal-history" id="dw-journal-history">
+                <p id="dw-journal-empty" class="text-muted" style="font-size: 0.88rem; font-style: italic;">No journal entries saved yet. Reflect upon today's question and save your thoughts above.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. Life Philosophy 7 Pillars ==================== -->
+    <section class="life-philosophy-section" id="life-philosophy">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="om-symbol">☸️</span>
+            <span>Philosophical Foundations</span>
+          </div>
+          <h2>7 Pillars of Bhagavad Gita Philosophy</h2>
+          <p>Explore the fundamental pillars of Krishna's life philosophy. Click any pillar to uncover ancient context, philosophical nuances, and practical solutions to modern dilemmas.</p>
+        </div>
+
+        <div class="philosophy-grid" id="philosophy-cards-grid">
+          <!-- Injected dynamically via philosophy-modal.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. Seek Krishna's Guidance & Guided Pranayama ==================== -->
+    <section class="contemplation-section" id="contemplation">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="om-symbol">🕊️</span>
+            <span>Personal Spiritual Shelter</span>
+          </div>
+          <h2>Seek Krishna's Counsel</h2>
+          <p>What burden are you carrying today? Choose your current state to receive Krishna's compassionate counsel and practice guided meditative breathing.</p>
+        </div>
+
+        <div class="guidance-split-grid">
+          <!-- Left: Emotional Navigator -->
+          <div class="guidance-left-col">
+            <div class="emotion-pills-row" role="tablist">
+              <button class="emotion-pill active" data-emotion="anxiety">Anxious & Overthinking</button>
+              <button class="emotion-pill" data-emotion="burnout">Exhausted & Burnout</button>
+              <button class="emotion-pill" data-emotion="fear">Fear of Failure</button>
+              <button class="emotion-pill" data-emotion="grief">Grief & Heartbreak</button>
+              <button class="emotion-pill" data-emotion="indecision">Lost in Purpose (Svadharma)</button>
+            </div>
+
+            <div id="krishna-guidance-display">
+              <!-- Injected dynamically via contemplation.js -->
+            </div>
+          </div>
+
+          <!-- Right: Guided Pranayama Breathing Circle -->
+          <div class="guidance-right-col">
+            <div class="pranayama-card" id="pranayama-pacer">
+              <div class="section-tag" style="margin-bottom: 12px;">
+                <span>🪷</span>
+                <span>Lotus Pranayama</span>
+              </div>
+              <h3>Sacred Breath Pacer</h3>
+              <p>Calm the fluctuations of the restless mind (Chitta Vritti) with this 4-phase balanced box breathing cycle.</p>
+
+              <div class="breath-circle-stage">
+                <div class="breath-lotus-visual" id="breath-lotus-circle">
+                  <div class="breath-timer-display" id="breath-timer-text">4s</div>
+                </div>
+              </div>
+
+              <div class="breath-instruction" id="breath-phase-text">
+                Click Begin to breathe with the sacred lotus
+              </div>
+
+              <button class="btn btn-gold" id="breath-toggle-btn">
+                <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span>Begin Pranayama</span>
+              </button>
+
+              <div class="breath-stats">
+                <span>Completed Cycles: <strong id="breath-cycles-val" class="text-gold">0</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Footer ==================== -->
+    <footer class="divine-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div class="brand-logo">
+              <div class="brand-symbol">ॐ</div>
+              <div class="brand-text">
+                <span class="brand-name">DIVINE WISDOM</span>
+                <span class="brand-tagline">Timeless Wisdom of Shri Krishna</span>
+              </div>
+            </div>
+            <p>
+              A digital sanctuary dedicated to the profound life philosophy, psychological clarity, and spiritual illumination of the Bhagavad Gita.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h5>Sanctuary</h5>
+            <ul class="footer-links">
+              <li><a href="#hero">Divine Entrance</a></li>
+              <li><a href="#about-gita">About the Gita</a></li>
+              <li><a href="#radha-krishna">Radha Krishna Experience</a></li>
+              <li><a href="#quotes-discovery">Verses & Wisdom</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Core Teachings</h5>
+            <ul class="footer-links">
+              <li><a href="#life-philosophy">Karma Yoga (Duty)</a></li>
+              <li><a href="#life-philosophy">Nishkama (Detachment)</a></li>
+              <li><a href="#life-philosophy">Samatvam (Equanimity)</a></li>
+              <li><a href="#contemplation">Seek Guidance</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Devotional Peace</h5>
+            <ul class="footer-links">
+              <li><a href="#daily-wisdom">Today's Wisdom</a></li>
+              <li><a href="#contemplation">Lotus Pranayama</a></li>
+              <li><a href="divine_judgement.html">Divine Judgement Game</a></li>
+              <li><a href="bmr_analyzer.html">Bio-Quantum HUD</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div class="disclaimer-text">
+            <strong>Devotional & Scholarly Note:</strong> Verses quoted are authentic Bhagavad Gita translations with contextual commentary intended for spiritual enrichment, mental peace, and practical life inspiration. Interpretations respectfully honor traditional Vedanta traditions.
+          </div>
+          <div>
+            &copy; 2026 DIVINE WISDOM. Timeless teachings of Shri Krishna. 🪷
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top-btn" title="Return to Top" aria-label="Scroll back to top">
+      <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+    </button>
+
+    <!-- Global Divine Toast Notification -->
+    <div id="divine-toast" role="status" aria-live="polite"></div>
+
+    <!-- Symbolism Modal Dialog -->
+    <div class="divine-modal" id="symbolism-modal" role="dialog" aria-modal="true" aria-labelledby="modal-symbol-title">
+      <div class="modal-content-wrapper">
+        <button class="modal-close" aria-label="Close dialog">✕</button>
+        <span class="modal-badge-ref" id="modal-symbol-sanskrit">मयूरपिच्छ</span>
+        <h3 class="modal-title" id="modal-symbol-title">Morpankh</h3>
+        <p class="modal-section-title">Spiritual Symbolism</p>
+        <p id="modal-symbol-meaning" style="line-height: 1.75; margin-bottom: 20px;"></p>
+        <p class="modal-section-title">Practical Life Lesson</p>
+        <p id="modal-symbol-lesson" class="text-gold" style="font-weight: 500; line-height: 1.6;"></p>
+      </div>
+    </div>
+
+    <!-- Philosophy Deep Dive Modal Dialog -->
+    <div class="divine-modal" id="philosophy-modal" role="dialog" aria-modal="true" aria-labelledby="modal-phil-title">
+      <div class="modal-content-wrapper">
+        <button class="modal-close" aria-label="Close dialog">✕</button>
+        <span class="modal-badge-ref" id="modal-phil-ref">Core Pillar</span>
+        <h3 class="modal-title" id="modal-phil-title">Karma Yoga</h3>
+        <span class="modal-sanskrit-tag" id="modal-phil-sanskrit">कर्मयोग</span>
+        <p class="modal-subtitle" id="modal-phil-subtitle">The Art of Action</p>
+
+        <p class="modal-section-title">Philosophical Essence</p>
+        <p id="modal-phil-essence" style="line-height: 1.75; margin-bottom: 18px;"></p>
+
+        <div id="modal-phil-verse-box" class="modal-verse-box"></div>
+
+        <p class="modal-section-title">Modern Dilemma</p>
+        <p class="dilemma-quote" id="modal-phil-dilemma"></p>
+
+        <p class="modal-section-title">Krishna's Counsel</p>
+        <p id="modal-phil-counsel" style="line-height: 1.75; margin-bottom: 20px;"></p>
+
+        <p class="modal-section-title">Practical Actionable Steps</p>
+        <ul class="practical-steps-list" id="modal-phil-steps"></ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Three.js (via CDN with local fallback in celestial-3d.js) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Application Scripts in Dependency Order -->
+  <script src="js/divine/gita-data.js"></script>
+  <script src="js/divine/celestial-3d.js"></script>
+  <script src="js/divine/radha-krishna.js"></script>
+  <script src="js/divine/audio-sanctuary.js"></script>
+  <script src="js/divine/quotes-engine.js"></script>
+  <script src="js/divine/daily-wisdom.js"></script>
+  <script src="js/divine/philosophy-modal.js"></script>
+  <script src="js/divine/contemplation.js"></script>
+  <script src="js/divine/app.js"></script>
+</body>
+</html>
